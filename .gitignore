@@ -1,64 +1,42 @@
 ### AL ###
-#Template for AL projects for Dynamics 365 Business Central
-#launch.json folder
-.vscode/
-#Cache folder
-.alcache/
-#Symbols folder
-.alpackages/
-#Snapshots folder
-.snapshots/
-#Testing Output folder
-.output/
-#Extension App-file
-*.app
-#Rapid Application Development File
-rad.json
-#Translation Base-file
-*.g.xlf
-#License-file
-*.flf
-#Test results file
-TestResults.xml
+# Template for AL projects for Dynamics 365 Business Central
+.vscode/             # launch.json folder
+.alcache/            # Cache folder
+.alpackages/         # Symbols folder
+.snapshots/          # Snapshots folder
+.output/             # Testing Output folder
+*.app                # Extension App-file
+rad.json             # Rapid Application Development File
+*.g.xlf              # Translation Base-file
+*.flf                # License-file
+TestResults.xml      # Test results file
 
-# Compiled class files
-*.class
-
-# Ignorar a pasta .metadata
-.metadata/
-
-# Log files
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
+# === Java/Maven/Spring Boot ===
+*.class              # Compiled class files
+*.log                # Log files
+*.jar                # Package Files
 *.war
 *.ear
+hs_err_pid*          # JVM crash logs
 
-# Virtual machine crash logs
-hs_err_pid*
-
-# Ignorar configurações do VS Code
-.vscode/
-
-# IntelliJ IDEA
-.idea/
-*.iml
-*.iws
-out/
-
-# Eclipse
+# === Eclipse / STS ===
 .project
 .classpath
 .settings/
 bin/
 tmp/
+.metadata/
 
-# BD embarcado
-h2/*.mv.db
+# === IntelliJ IDEA ===
+.idea/
+*.iml
+*.iws
+out/
+
+# === VS Code ===
+.vscode/
+
+# === BD embarcado (H2) ===
+h2/
+*.mv.db
+*.trace.db

@@ -1,10 +1,17 @@
 package org.serratec.backend.entity;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
@@ -27,7 +34,38 @@ public class Veiculo {
 	@Embedded								//incorpora o que está na classe caracteristica - união de classes
 	private Caracteristica caracteristica;
 
+	@OneToOne
+	@JoinColumn(name = "id_proprietario")
+	private Proprietario proprietario;
 	
+	@JsonManagedReference
+	@OneToMany(mappedBy = "veiculo")
+	private List<Manutencao> manutencoes;
+	
+	
+	
+	public List<Manutencao> getManutencoes() {
+		return manutencoes;
+	}
+
+
+
+	public void setManutencoes(List<Manutencao> manutencoes) {
+		this.manutencoes = manutencoes;
+	}
+
+
+
+	public Proprietario getProprietario() {
+		return proprietario;
+	}
+	
+	
+
+	public void setProprietario(Proprietario proprietario) {
+		this.proprietario = proprietario;
+	}
+
 	//Getters Setters
 	public Long getId() {
 		return id;

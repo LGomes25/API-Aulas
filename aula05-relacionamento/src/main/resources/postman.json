@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "6bf77ed0-2b2d-4e5e-bdbf-8493d814c539",
+		"name": "aula05-relacionamento",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44822458",
+		"_collection_link": "https://lgomes-8289.postman.co/workspace/Residencia-API~9edd5a9f-9072-4e23-8b04-9a6e63f9659b/collection/44822458-6bf77ed0-2b2d-4e5e-bdbf-8493d814c539?action=share&source=collection_link&creator=44822458"
+	},
+	"item": [
+		{
+			"name": "Listar Veiculos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/veiculos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"veiculos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Proprietarios",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/proprietarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proprietarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Manutencao",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/manutencao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"manutencao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Servicos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/servico",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"servico"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir Veiculo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"placa\": \"KYJ9092\",\r\n  \"marca\": \"Renault\",\r\n  \"modelo\": \"Sandero\",\r\n  \"caracteristica\": {\r\n    \"renavam\": \"23434343\",\r\n    \"chassi\": \"2343434\",\r\n    \"cor\": \"branco\",\r\n    \"ano\": 2015,\r\n    \"categoria\": \"SUV\",\r\n    \"combustivel\": 2\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/veiculos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"veiculos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir Proprietario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n    \"nome\":\"Roni\"\r\n    },\r\n    {\r\n    \"nome\":\"Leandro\"\r\n    },\r\n    {\r\n    \"nome\":\"José\"\r\n    }\r\n\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proprietarios/lista",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proprietarios",
+						"lista"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir Manutencao",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"dataEntrada\":\"2025-05-19\",\r\n    \"dataSaida\":\"2025-05-20\",\r\n    \"obs\":\"Carro ok\",\r\n    \"veiculo\":{\r\n        \"id\":1\r\n    },\r\n    \"servicos\":[\r\n        {\r\n            \"id\":1\r\n        },\r\n        {\r\n            \"id\":2\r\n        }\r\n\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/manutencao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"manutencao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir Servicos Lista",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"descricao\":\"Limpeza do Radiador\",\r\n        \"valor\":200\r\n    },\r\n    {\r\n        \"descricao\":\"Trocade Óleo\",\r\n        \"valor\":80\r\n    },\r\n    {\r\n        \"descricao\":\"Limpeza de Bico\",\r\n        \"valor\":180\r\n    }\r\n\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/servico/lista",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"servico",
+						"lista"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

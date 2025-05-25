@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "af5541d5-d354-4e29-8044-3998a4e330ec",
+		"name": "aula04-h2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44822458",
+		"_collection_link": "https://lgomes-8289.postman.co/workspace/Residencia-API~9edd5a9f-9072-4e23-8b04-9a6e63f9659b/collection/44822458-af5541d5-d354-4e29-8044-3998a4e330ec?action=share&source=collection_link&creator=44822458"
+	},
+	"item": [
+		{
+			"name": "Listar Clientes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Clientes por Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cliente/1762fbe6-5d65-4594-add8-662f5873b5d4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"1762fbe6-5d65-4594-add8-662f5873b5d4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir Cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cliente\":\"helio\",\r\n    \"email\":\"jo@gmail.com\",\r\n    \"cpf\":\"829.160.700-10\",\r\n    \"dataNascimento\":\"2010-02-04\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir Lista de Cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"cliente\": \"Helio\",\r\n    \"email\": \"jo@gmail.com\",\r\n    \"cpf\": \"829.160.700-10\",\r\n    \"dataNascimento\": \"2010-02-04\"\r\n  },\r\n  {\r\n    \"cliente\": \"Mariana\",\r\n    \"email\": \"mariana.silva@example.com\",\r\n    \"cpf\": \"123.456.789-09\",\r\n    \"dataNascimento\": \"1995-08-22\"\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cliente/lista",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"lista"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar por Id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cliente\": \"Juca\",\r\n    \"email\": \"j@gmail.com\",\r\n    \"cpf\": \"211.713.670-23\",\r\n    \"dataNascimento\": \"2000-02-04\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cliente/5b6dc95d-f0f0-4809-977c-713d4417f989",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"5b6dc95d-f0f0-4809-977c-713d4417f989"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir Cliente",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cliente/e1a6e711-6542-4df0-b9e5-398fc1144d30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"e1a6e711-6542-4df0-b9e5-398fc1144d30"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

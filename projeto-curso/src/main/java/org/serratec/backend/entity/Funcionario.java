@@ -22,5 +22,6 @@ public class Funcionario {
 	private String nome;
 	private LocalDate dataNascimento;
 	private Double salario;
+	private String email;
 	
 }

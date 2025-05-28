@@ -45,5 +45,9 @@ public class EnderecoService {
 		return new EnderecoResponseDTO(repository.save(endereco));
 	}
 	
+	//metodo para buscar o endereco no repositorio
+	public Endereco buscarEndereco (String cep) {
+        return repository.findByCep(cep);
+    }
 	
 }

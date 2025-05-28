@@ -8,6 +8,7 @@ import java.util.Optional;
 import org.serratec.backend.config.MailConfig;
 import org.serratec.backend.dto.UsuarioRequestDTO;
 import org.serratec.backend.dto.UsuarioResponseDTO;
+import org.serratec.backend.entity.Endereco;
 import org.serratec.backend.entity.Usuario;
 import org.serratec.backend.entity.UsuarioPerfil;
 import org.serratec.backend.exception.UsuarioException;
@@ -53,8 +54,8 @@ public class UsuarioService {
 	@Transactional
 	public UsuarioResponseDTO inserir(UsuarioRequestDTO usuario) {
 		Optional<Usuario> u = repository.findByEmail(usuario.getEmail());
-		
-//		var endereco = Optional.ofNullable(repository.findByCep(usuario.getCep()));
+		endServ.buscar(usuario.getCep());										//????
+		Endereco endereco = endServ.buscarEndereco(usuario.getCep());			//Chama o metodo em endereco service
 		
 		if(u.isPresent()) {
 			throw new UsuarioException("Email já cadastrado");
@@ -65,6 +66,7 @@ public class UsuarioService {
 		usuarioEntity.setEmail(usuario.getEmail());
 		usuario.setSenha(passwordEncoder.encode(usuario.getSenha()));
 		usuarioEntity.setSenha(usuario.getSenha());
+		usuarioEntity.setEndereco(endereco);									//Inclui endereco no objeto
 		
 		for (UsuarioPerfil up: usuario.getUsuarioPerfis()) {
 			up.setPerfil(perfilService.buscar(up.getPerfil().getId()));

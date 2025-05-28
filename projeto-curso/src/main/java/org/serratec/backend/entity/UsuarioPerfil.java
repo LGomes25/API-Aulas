@@ -27,7 +27,12 @@ public class UsuarioPerfil {
 		id.setPerfil(perfil);
 		this.dataCriacao = dataCriacao;
 	}
-
+	
+	@Override
+	public String toString() {
+		return "UsuarioPerfil [id=" + id + ", dataCriacao=" + dataCriacao + "]";
+	}
+	
 	public void setUsuario(Usuario usuario) {
 		id.setUsuario(usuario);
 	}
@@ -43,5 +48,9 @@ public class UsuarioPerfil {
 	public Perfil getPerfil() {
 		return id.getPerfil();
 	}
+
+
+
+
 
 }

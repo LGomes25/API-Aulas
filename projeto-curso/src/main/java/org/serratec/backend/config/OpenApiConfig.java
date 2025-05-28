@@ -5,9 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
-import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
@@ -42,13 +39,5 @@ public class OpenApiConfig {
 				.license(apacheLicense);
 		return new OpenAPI().info(info).servers(List.of(devServer, prodServer));
 	}
-	
-	public void addArgumentResolvers(List<HandlerMethodArgumentResolver> resolvers) {
-        PageableHandlerMethodArgumentResolver resolver = new PageableHandlerMethodArgumentResolver();
-        resolver.setMaxPageSize(100);
-        resolver.setOneIndexedParameters(false); // false -> começa em 0
-        resolver.setFallbackPageable(PageRequest.of(0, 10)); // padrão: página 0, 10 itens
-        resolvers.add(resolver);
-    }
 
 }

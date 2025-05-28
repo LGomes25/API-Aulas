@@ -8,6 +8,7 @@ import org.serratec.backend.entity.UsuarioPerfil;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -26,6 +27,12 @@ public class UsuarioRequestDTO {
 
 	@NotBlank
 	private String senha;
+	
+	@NotBlank(message = "O CEP é obrigatório.")
+    @Pattern(regexp = "\\d{8}", message = "CEP inválido. Deve conter exatamente 8 dígitos numéricos sem traço!!!!!!")
+    private String cep;
+	
+	
 
 	private Set<UsuarioPerfil> usuarioPerfis = new HashSet<>();
 
